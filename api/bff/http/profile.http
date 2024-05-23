@@ -1,7 +1,7 @@
 
 ###
 #get profile by his userid
-GET http://localhost:8080/api/profiles/112
+GET http://localhost:8080/api/profiles/94
 
 ###
 #edit profile for the user

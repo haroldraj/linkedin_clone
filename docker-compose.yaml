@@ -1,8 +1,8 @@
 version: '3.1'
 services:
   db-user:
-    container_name: mariadb-user
-    image: mariadb:10.11
+    container_name: linkedin-db-user
+    image: mariadb:latest
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: root
@@ -13,8 +13,8 @@ services:
       - spring-cloud-network
 
   db-profile:
-    container_name: mariadb-profile
-    image: mariadb:10.11
+    container_name: linkedin-db-profile
+    image: mariadb:latest
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: root
@@ -25,8 +25,8 @@ services:
       - spring-cloud-network
   
   db-post:
-    container_name: mariadb-post
-    image: mariadb:10.11
+    container_name: linkedin-db-post
+    image: mariadb:latest
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: root
@@ -36,10 +36,10 @@ services:
     networks:
       - spring-cloud-network
 
-  linkedin-user:
-    container_name: linkedin-user
+  api-user:
+    container_name: linkedin-api-user
     build:
-      context: ../linkedin-user
+      context: api/user
       dockerfile: Dockerfile
     networks:
       - spring-cloud-network
@@ -49,10 +49,10 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
     
 
-  linkedin-profile:
-    container_name: linkedin-profile
+  api-profile:
+    container_name: linkedin-api-profile
     build:
-      context: ../linkedin-profile
+      context: api/profile
       dockerfile: Dockerfile
     networks:
       - spring-cloud-network
@@ -61,10 +61,10 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
   
-  linkedin-post:
-    container_name: linkedin-post
+  api-post:
+    container_name: linkedin-api-post
     build:
-      context: ../linkedin-post
+      context: api/post
       dockerfile: Dockerfile
     networks:
       - spring-cloud-network
@@ -73,19 +73,32 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
 
-  linkedin-bff:
-    container_name: linkedin-bff
+  api-bff:
+    container_name: linkedin-api-bff
     build:
-      context: ../linkedin-bff
+      context: api/bff
       dockerfile: Dockerfile
     networks:
       - spring-cloud-network
     environment:
-      LINKEDIN_USER_HOST: linkedin-user
-      LINKEDIN_PROFILE_HOST: linkedin-profile
-      LINKEDIN_POST_HOST: linkedin-post
+      LINKEDIN_USER_HOST: api-user
+      LINKEDIN_PROFILE_HOST: api-profile
+      LINKEDIN_POST_HOST: api-post
     ports:
       - "8080:8080"
+  
+  web:
+    container_name: linkedin-web
+    build:
+      context: web
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3002:3002"
+    networks:
+      - spring-cloud-network
+    depends_on:
+      - api-bff
 
 networks:
   spring-cloud-network:
