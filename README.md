@@ -39,7 +39,7 @@ MariaDB is used as the database for the application. We have a `Dockerfile` in t
 
 ### API
 
-The address of the API is `http://localhost:8080` when running in Docker.
+The address of the API is `http://localhost:8080/api` when running in Docker.
 
 ### Web
 We used ReactJS for the frontend. We have a `Dockerfile` in the `web` directory which is used to build a Docker image of the Web. 
