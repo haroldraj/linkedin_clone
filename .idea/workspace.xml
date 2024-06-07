@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Basic Bars and pages creation">
-      <change afterPath="$PROJECT_DIR$/web/src/api/postAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/NewPostPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/UserProfilePage.tsx" afterDir="false" />
+    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Api directory creation">
+      <change afterPath="$PROJECT_DIR$/web/src/api/profileAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/api/userAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/PostCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/UserProfileBrief.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/pages/PostPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/PostPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "HomePost",
+    "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -101,7 +100,7 @@
       <updated>1716466795311</updated>
       <workItem from="1716466796665" duration="39000" />
       <workItem from="1717158075993" duration="2633000" />
-      <workItem from="1717739452021" duration="2465000" />
+      <workItem from="1717739452021" duration="3473000" />
     </task>
     <task id="LOCAL-00001" summary="Project simple layout done">
       <option name="closed" value="true" />
@@ -119,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717741152693</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Api directory creation">
+      <option name="closed" value="true" />
+      <created>1717742046994</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717742046994</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +135,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project simple layout done" />
     <MESSAGE value="Basic Bars and pages creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic Bars and pages creation" />
+    <MESSAGE value="Api directory creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Api directory creation" />
   </component>
 </project>
