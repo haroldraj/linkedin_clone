@@ -5,16 +5,33 @@ import postAPI from '../api/postAPI';
 const PostPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [post, setPost] = useState<any>(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        if (!id) {
+            setError('Invalid post ID');
+            return;
+        }
+
         const fetchPost = async () => {
-            const data = await postAPI.getPostById(id);
-            setPost(data);
+            try {
+                const data = await postAPI.getPostById(id);
+                setPost(data);
+            } catch (err) {
+                setError('Failed to fetch post');
+            }
         };
+
         fetchPost();
     }, [id]);
 
-    if (!post) return <div>Loading...</div>;
+    if (error) {
+        return <div>{error}</div>;
+    }
+
+    if (!post) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div style={{ padding: '20px' }}>

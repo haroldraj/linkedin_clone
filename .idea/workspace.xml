@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Api directory update  and Users/profile components">
-      <change afterPath="$PROJECT_DIR$/web/src/api/profileAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/api/userAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/UserProfileBrief.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/hooks/useAuth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/hooks/useFormData.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/utils/helpers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/utils/validators.ts" afterDir="false" />
+    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Utils , Users Validation">
+      <change afterPath="$PROJECT_DIR$/web/src/components/PostCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/hooks/useFormData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/hooks/useFormData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/PostPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/PostPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/UserProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/UserProfilePage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +67,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
     "npm.dev.executor": "Run",
     "ts.external.directory.path": "D:\\ECOLEIT\\4DWRP\\linkedin_clone\\web\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -78,7 +78,17 @@
       <recent name="D:\ECOLEIT\4DWRP\linkedin_clone\web\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/web/package.json" />
       <command value="run" />
@@ -92,6 +102,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -105,7 +116,7 @@
       <updated>1716466795311</updated>
       <workItem from="1716466796665" duration="39000" />
       <workItem from="1717158075993" duration="2633000" />
-      <workItem from="1717739452021" duration="4235000" />
+      <workItem from="1717739452021" duration="4923000" />
     </task>
     <task id="LOCAL-00001" summary="Project simple layout done">
       <option name="closed" value="true" />
@@ -139,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717743157975</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Utils , Users Validation">
+      <option name="closed" value="true" />
+      <created>1717743742940</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717743742940</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +169,7 @@
     <MESSAGE value="Basic Bars and pages creation" />
     <MESSAGE value="Api directory creation" />
     <MESSAGE value="Api directory update  and Users/profile components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Api directory update  and Users/profile components" />
+    <MESSAGE value="Utils , Users Validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Utils , Users Validation" />
   </component>
 </project>

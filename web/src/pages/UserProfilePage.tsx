@@ -7,16 +7,33 @@ import PostCard from '../components/PostCard';
 const UserProfilePage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [profile, setProfile] = useState<any>(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        if (!id) {
+            setError('Invalid profile ID');
+            return;
+        }
+
         const fetchProfile = async () => {
-            const data = await profileAPI.getProfileById(id);
-            setProfile(data);
+            try {
+                const data = await profileAPI.getProfileById(id);
+                setProfile(data);
+            } catch (err) {
+                setError('Failed to fetch profile');
+            }
         };
+
         fetchProfile();
     }, [id]);
 
-    if (!profile) return <div>Loading...</div>;
+    if (error) {
+        return <div>{error}</div>;
+    }
+
+    if (!profile) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div style={{ padding: '20px' }}>

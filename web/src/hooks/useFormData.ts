@@ -1,11 +1,15 @@
 import { useState } from 'react';
 
-const useFormData = (initialState: any) => {
-    const [formData, setFormData] = useState(initialState);
+type FormData = {
+    [key: string]: string;
+};
+
+const useFormData = (initialState: FormData) => {
+    const [formData, setFormData] = useState<FormData>(initialState);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setFormData((prevFormData) => ({
+        setFormData((prevFormData: FormData) => ({
             ...prevFormData,
             [name]: value,
         }));
