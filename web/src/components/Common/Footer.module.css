@@ -1,0 +1,28 @@
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    border-top: 1px solid #e1e1e1;
+}
+
+.footer a {
+    color: #0073b1;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-settings {
+    margin-top: 20px;
+}
+
+.footer-settings .bi {
+    font-size: 20px;
+}
+
+.footer-settings p {
+    margin: 0;
+}

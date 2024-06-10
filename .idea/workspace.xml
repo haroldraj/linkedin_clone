@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Utils , Users Validation">
-      <change afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/Common/Header.module.css" afterDir="false" />
+    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Header updated">
+      <change afterPath="$PROJECT_DIR$/web/src/components/Common/Footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Common/Footer.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Common/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +120,7 @@
       <workItem from="1717158075993" duration="2633000" />
       <workItem from="1717739452021" duration="4923000" />
       <workItem from="1718031005913" duration="1173000" />
-      <workItem from="1718036547219" duration="1488000" />
+      <workItem from="1718036547219" duration="1560000" />
     </task>
     <task id="LOCAL-00001" summary="Project simple layout done">
       <option name="closed" value="true" />
@@ -164,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717743742940</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Header updated">
+      <option name="closed" value="true" />
+      <created>1718041753715</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718041753715</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +193,7 @@
     <MESSAGE value="Api directory creation" />
     <MESSAGE value="Api directory update  and Users/profile components" />
     <MESSAGE value="Utils , Users Validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Utils , Users Validation" />
+    <MESSAGE value="Header updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Header updated" />
   </component>
 </project>
