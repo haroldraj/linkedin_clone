@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Layout adjustments">
-      <change afterPath="$PROJECT_DIR$/web/src/components/NewPost/NewPostForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/NewPost/NewPostForm.module.css" afterDir="false" />
+    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="New Post implementation">
+      <change afterPath="$PROJECT_DIR$/web/src/components/NewPost/NewPostService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Profile/UserProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +120,7 @@
       <workItem from="1717158075993" duration="2633000" />
       <workItem from="1717739452021" duration="4923000" />
       <workItem from="1718031005913" duration="1173000" />
-      <workItem from="1718036547219" duration="3027000" />
+      <workItem from="1718036547219" duration="3116000" />
     </task>
     <task id="LOCAL-00001" summary="Project simple layout done">
       <option name="closed" value="true" />
@@ -187,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718042298702</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="New Post implementation">
+      <option name="closed" value="true" />
+      <created>1718043337334</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718043337334</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +220,7 @@
     <MESSAGE value="Header updated" />
     <MESSAGE value="Footer creation" />
     <MESSAGE value="Layout adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Layout adjustments" />
+    <MESSAGE value="New Post implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Post implementation" />
   </component>
 </project>
