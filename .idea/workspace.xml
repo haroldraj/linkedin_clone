@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Footer creation">
+    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Layout adjustments">
+      <change afterPath="$PROJECT_DIR$/web/src/components/NewPost/NewPostForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/NewPost/NewPostForm.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Common/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Footer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Common/Footer.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Common/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Common/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +121,7 @@
       <workItem from="1717158075993" duration="2633000" />
       <workItem from="1717739452021" duration="4923000" />
       <workItem from="1718031005913" duration="1173000" />
-      <workItem from="1718036547219" duration="2023000" />
+      <workItem from="1718036547219" duration="3027000" />
     </task>
     <task id="LOCAL-00001" summary="Project simple layout done">
       <option name="closed" value="true" />
@@ -180,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718041838076</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Layout adjustments">
+      <option name="closed" value="true" />
+      <created>1718042298702</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718042298702</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +212,7 @@
     <MESSAGE value="Utils , Users Validation" />
     <MESSAGE value="Header updated" />
     <MESSAGE value="Footer creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Footer creation" />
+    <MESSAGE value="Layout adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Layout adjustments" />
   </component>
 </project>
