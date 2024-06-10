@@ -5,13 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Utils , Users Validation">
-      <change afterPath="$PROJECT_DIR$/web/src/components/PostCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Common/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/hooks/useFormData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/hooks/useFormData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/PostPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/PostPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/UserProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/UserProfilePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/api/postAPI.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/api/profileAPI.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/api/userAPI.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Hello.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/NavigationBar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/PostCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/UserProfileBrief.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/hooks/useAuth.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/hooks/useFormData.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/HomePage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/NewPostPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/PostPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/UserProfilePage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/utils/helpers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/utils/validators.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="HomePost" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,14 +48,12 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="b9d42584-9b01-4605-a5a3-da8d584188a0" />
-        <option name="url" value="https://github.com/haroldraj/linkedin_clone.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/haroldraj/linkedin_clone.git",
+    "accountId": "5b84027c-e2f4-46d2-ab24-63d64bb9000c"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -60,7 +71,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "HomePost",
+    "git-widget-placeholder": "feature/new-post-profile",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -106,6 +117,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -117,6 +136,7 @@
       <workItem from="1716466796665" duration="39000" />
       <workItem from="1717158075993" duration="2633000" />
       <workItem from="1717739452021" duration="4923000" />
+      <workItem from="1718031005913" duration="1173000" />
     </task>
     <task id="LOCAL-00001" summary="Project simple layout done">
       <option name="closed" value="true" />
@@ -163,6 +183,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project simple layout done" />
