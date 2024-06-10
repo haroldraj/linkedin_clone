@@ -1,3 +1,10 @@
+FROM maven:3.9.7-amazoncorretto-21  AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn package -DskipTests
 FROM amazoncorretto:21-alpine-jdk
-COPY target/linkedin-profile-0.0.1-SNAPSHOT.jar linkedin-profile.jar
-ENTRYPOINT ["java", "-jar", "linkedin-profile.jar"]
+WORKDIR /app
+COPY --from=build /app/target/*.jar linkedin-profile.jar
+CMD ["java", "-jar", "linkedin-profile.jar"]
+

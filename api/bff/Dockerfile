@@ -1,3 +1,9 @@
+FROM maven:3.9.7-amazoncorretto-21  AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn package -DskipTests
 FROM amazoncorretto:21-alpine-jdk
-COPY target/linkedin-bff-0.0.1-SNAPSHOT.jar linkedin-bff.jar
-ENTRYPOINT ["java", "-jar", "linkedin-bff.jar"]
+WORKDIR /app
+COPY --from=build /app/target/*.jar linkedin-bff.jar
+CMD ["java", "-jar", "linkedin-bff.jar"]
