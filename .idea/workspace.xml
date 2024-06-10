@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="UserProfile implementation view">
-      <change afterPath="$PROJECT_DIR$/web/src/components/Profile/EditProfile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/EditProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Profile/EditProfile.jsx" afterDir="false" />
+    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Userprof service view">
+      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/ProfileService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Profile/ProfileService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,7 @@
       <workItem from="1717158075993" duration="2633000" />
       <workItem from="1717739452021" duration="4923000" />
       <workItem from="1718031005913" duration="1173000" />
-      <workItem from="1718036547219" duration="3250000" />
+      <workItem from="1718036547219" duration="3289000" />
     </task>
     <task id="LOCAL-00001" summary="Project simple layout done">
       <option name="closed" value="true" />
@@ -210,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718043495350</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Userprof service view">
+      <option name="closed" value="true" />
+      <created>1718043557275</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718043557275</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +244,7 @@
     <MESSAGE value="Layout adjustments" />
     <MESSAGE value="New Post implementation" />
     <MESSAGE value="UserProfile implementation view" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserProfile implementation view" />
+    <MESSAGE value="Userprof service view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Userprof service view" />
   </component>
 </project>
