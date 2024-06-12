@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Userprof service view">
-      <change afterPath="$PROJECT_DIR$/web/src/hooks/usePostData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/hooks/useProfileData.js" afterDir="false" />
+    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="utils files">
+      <change afterPath="$PROJECT_DIR$/web/src/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,6 +120,7 @@
       <workItem from="1717739452021" duration="4923000" />
       <workItem from="1718031005913" duration="1173000" />
       <workItem from="1718036547219" duration="4693000" />
+      <workItem from="1718173940465" duration="379000" />
     </task>
     <task id="LOCAL-00001" summary="Project simple layout done">
       <option name="closed" value="true" />
@@ -226,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718043576843</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="utils files">
+      <option name="closed" value="true" />
+      <created>1718174255181</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718174255181</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +263,7 @@
     <MESSAGE value="New Post implementation" />
     <MESSAGE value="UserProfile implementation view" />
     <MESSAGE value="Userprof service view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Userprof service view" />
+    <MESSAGE value="utils files" />
+    <option name="LAST_COMMIT_MESSAGE" value="utils files" />
   </component>
 </project>
