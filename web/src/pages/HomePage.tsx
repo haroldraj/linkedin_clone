@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
 import postAPI from '../api/postAPI';
 
@@ -23,4 +23,14 @@ const HomePage: React.FC = () => {
     );
 };
 
-export default HomePage;
+export default HomePage;*/
+// Mine
+
+export default function HomePage()
+{
+    return (
+        <div>
+            <h1 className="text-3xl font-bold underline">Home Page</h1>
+        </div>);
+}
+

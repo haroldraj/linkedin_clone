@@ -4,12 +4,15 @@ import profileAPI from '../api/profileAPI';
 import UserProfileBrief from '../components/UserProfileBrief';
 import PostCard from '../components/PostCard';
 
-const UserProfilePage: React.FC = () => {
+const UserProfilePage: React.FC = () =>
+{
     const { id } = useParams<{ id: string }>();
     const [profile, setProfile] = useState<any>(null);
 
-    useEffect(() => {
-        const fetchProfile = async () => {
+    useEffect(() =>
+    {
+        const fetchProfile = async () =>
+        {
             const data = await profileAPI.getProfileById(id);
             setProfile(data);
         };
