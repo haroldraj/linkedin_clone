@@ -17,39 +17,11 @@ const App: React.FC = () =>
 
 export default App;*/
 
-import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import HomePage from "./pages/HomePage";
-import PostPage from "./pages/PostPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import PostsPage from "./pages/PostsPage";
+import router from "./Router";
 
 const queryClient = new QueryClient();
-
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Navigate to="/home" />,
-        errorElement: <NotFoundPage />
-    },
-    {
-        path: '/home',
-        element: <HomePage />,
-
-    }
-    ,
-    {
-        path: '/posts',
-        element: <PostsPage />,
-        children: [
-
-            {
-                path: '/posts/:postId',
-                element: <PostPage />
-            }
-        ]
-    }
-]);
 
 function App()
 {

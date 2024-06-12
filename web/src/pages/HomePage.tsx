@@ -26,11 +26,20 @@ const HomePage: React.FC = () => {
 export default HomePage;*/
 // Mine
 
+import Header from "../components/header/Header";
+
+//import Header from "../components/header/Header";
+
 export default function HomePage()
 {
     return (
         <div>
-            <h1 className="text-3xl font-bold underline">Home Page</h1>
+            <Header />
+            <div className="text-3xl text-center">HomePage</div>
+            {/* App Body */}
+            {/* Sidebar */}
+            {/* Feed */}
+            {/* Widget */}
         </div>);
 }
 

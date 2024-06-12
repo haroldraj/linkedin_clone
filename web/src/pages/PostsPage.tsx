@@ -9,7 +9,7 @@ export default function PostsPage()
         <div className="flex gap-2">
             <div className="flex flex-col gap-2">
                 {posts.map((post) => (
-                    <NavLink key={post} to={`/posts/${post}`}
+                    <NavLink key={post} to={`/post/${post}`}
                         className={({ isActive }) =>
                         {
                             return isActive ? 'font-bold underline' : ''
@@ -17,7 +17,6 @@ export default function PostsPage()
                         Post {post}
                     </NavLink>))}
             </div>
-
             <Outlet />
         </div>);
 

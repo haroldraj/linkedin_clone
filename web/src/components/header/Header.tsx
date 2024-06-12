@@ -8,13 +8,16 @@ import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ChatIcon from '@material-ui/icons/Chat'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { Link } from 'react-router-dom';
 
 export default function Header()
 {
     return (
         <div className="header">
             <div className='header_left'>
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin_logo" />
+                <Link to='/home' className='header_left'>
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin_logo" />
+                </Link>
                 <div className='header_search'>
                     <SearchIcon />
                     <input type="text" />
