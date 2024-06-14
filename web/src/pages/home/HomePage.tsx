@@ -11,6 +11,7 @@ export default function HomePage()
             <div className="home_body">
                 <Sidebar />
                 <Feed />
+                <Sidebar />
                 {/* Feed */}
                 {/* Widget */}
             </div>
