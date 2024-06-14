@@ -12,7 +12,7 @@ GET http://localhost:8081/users/username/user1
 
 ###
 #search user with specific name or lastname
-GET http://localhost:8081/users/search/lisa
+GET http://localhost:8081/users/search/user10
 
 ###
 #create user

@@ -3,14 +3,11 @@ package com.ecoleit.linkedin.profile.service;
 import com.ecoleit.linkedin.profile.entity.Profile;
 import com.ecoleit.linkedin.profile.modele.FullProfileDTO;
 import com.ecoleit.linkedin.profile.modele.ProfileDTO;
+import com.ecoleit.linkedin.profile.modele.UserDTO;
 import com.ecoleit.linkedin.profile.repository.ProfileRepository;
 import org.springframework.stereotype.Service;
-
-import java.sql.Array;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class ProfileService {
@@ -19,23 +16,26 @@ public class ProfileService {
     private final EducationService educationService;
     private final ConnectionService connectionService;
     private final SkillService skillService;
+    private final UserService userService;
 
     public ProfileService(ProfileRepository profileRepository,
                           ExperienceService experienceService,
                           EducationService educationService,
                           ConnectionService connectionService,
-                          SkillService skillService) {
+                          SkillService skillService, UserService userService) {
         this.profileRepository = profileRepository;
         this.experienceService = experienceService;
         this.educationService = educationService;
         this.connectionService = connectionService;
         this.skillService = skillService;
+        this.userService = userService;
     }
 
     private FullProfileDTO convertToFullProfileDTO(Profile fullProfile){
+        UserDTO userDTO = userService.getUserById( fullProfile.getUserId());
         return  new FullProfileDTO(
                 fullProfile.getId(),
-                fullProfile.getUserId(),
+                userDTO,
                 fullProfile.getCurrentJobTitle(),
                 fullProfile.getIndustry(),
                 fullProfile.getSummary(),
@@ -67,6 +67,15 @@ public class ProfileService {
                 .orElseThrow(()->
                         new IllegalArgumentException("Profile not found"));
     }
+
+    public FullProfileDTO getFullProfileById(Integer profileId){
+        return profileRepository
+                .findById(profileId)
+                .map(this::convertToFullProfileDTO)
+                .orElseThrow(()->
+                        new IllegalArgumentException("Profile not found"));
+    }
+
     public List<FullProfileDTO> getProfileList(){
         return profileRepository
                 .findAll()

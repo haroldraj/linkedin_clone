@@ -33,41 +33,48 @@ public class ProfileController {
         return profileService.getProfileList();
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/{profileId}")
+    FullProfileDTO getProfileById(@PathVariable Integer profileId ){
+        return profileService.getFullProfileById(profileId);
+    }
+
+    @GetMapping("/user/{userId}")
     FullProfileDTO getProfileByUserId(@PathVariable Integer userId){
         return profileService.getFullProfileByUserId(userId);
     }
-    @PutMapping("/{userId}")
+
+    @PutMapping("/user/{userId}")
     FullProfileDTO updateProfile(@PathVariable Integer userId,
                              @RequestBody ProfileDTO profileDTO){
         return profileService.updateProfile(userId, profileDTO);
     }
+
     @PostMapping("")
     FullProfileDTO createProfile(@RequestBody ProfileDTO profileDTO){
         return profileService.createProfile(profileDTO);
     }
 
     //####### Experience ########
-    @GetMapping("/{userId}/experiences")
+    @GetMapping("/user/{userId}/experiences")
     List<ExperienceDTO> getExperienceListByUserId(@PathVariable Integer userId){
         return  experienceService.getExperienceListByUserId(userId);
     }
 
-    @PostMapping("/{userId}/experiences")
+    @PostMapping("/user/{userId}/experiences")
     ExperienceDTO createExperience(
             @PathVariable Integer userId,
             @RequestBody ExperienceDTO experienceDTO){
         return experienceService.createExperience(userId, experienceDTO);
     }
 
-    @PutMapping("/{userId}/experiences/{experienceId}")
+    @PutMapping("/user/{userId}/experiences/{experienceId}")
     ExperienceDTO updateExperience(
             @PathVariable Integer userId,
             @PathVariable Integer experienceId,
             @RequestBody ExperienceDTO experienceDTO){
         return experienceService.updateExperience(userId, experienceId, experienceDTO);
     }
-    @DeleteMapping("/{userId}/experiences/{experienceId}")
+    @DeleteMapping("/user/{userId}/experiences/{experienceId}")
     ResponseEntity<String> deleteExperience(
             @PathVariable Integer userId,
             @PathVariable Integer experienceId) {
@@ -77,19 +84,19 @@ public class ProfileController {
 
     //####### Education ########
     //FETCH
-    @GetMapping("/{userId}/educations")
+    @GetMapping("/user/{userId}/educations")
     List<EducationDTO> getEducationListByUserId(@PathVariable Integer userId){
         return  educationService.getEducationListByUserId(userId);
     }
     // CREATE
-    @PostMapping("/{userId}/educations")
+    @PostMapping("/user/{userId}/educations")
     EducationDTO createEducation(
             @PathVariable Integer userId,
             @RequestBody EducationDTO educationDTO){
         return educationService.createEducation(userId, educationDTO);
     }
     // UPDATE
-    @PutMapping("/{userId}/educations/{educationId}")
+    @PutMapping("/user/{userId}/educations/{educationId}")
     EducationDTO updateEducation(
             @PathVariable Integer userId,
             @PathVariable Integer educationId,
@@ -97,7 +104,7 @@ public class ProfileController {
         return educationService.updateEducation(userId, educationId, educationDTO);
     }
     // DELETE
-    @DeleteMapping("/{userId}/educations/{educationId}")
+    @DeleteMapping("/user/{userId}/educations/{educationId}")
     ResponseEntity<?> deleteEducation(
             @PathVariable Integer userId,
             @PathVariable Integer educationId) {
@@ -106,12 +113,12 @@ public class ProfileController {
     }
 
     //####### Connection ########
-    @GetMapping("/{userId}/connections")
+    @GetMapping("/user/{userId}/connections")
     List<ProfileDTO> getConnectionListByUserId(@PathVariable Integer userId){
         return  connectionService.getConnectionListByUserId(userId);
     }
     // CREATE
-    @PostMapping("/{userId}/connections")
+    @PostMapping("/user/{userId}/connections")
     ResponseEntity<?> addConnection(
             @PathVariable Integer userId,
             @RequestParam Integer otherUserId){
@@ -119,7 +126,7 @@ public class ProfileController {
         return ResponseEntity.ok("Connection added");
     }
     // DELETE
-    @DeleteMapping("/{userId}/connections")
+    @DeleteMapping("/user/{userId}/connections")
     ResponseEntity<?> removeConnection(
             @PathVariable Integer userId,
             @RequestParam Integer otherUserId){
@@ -129,19 +136,19 @@ public class ProfileController {
 
     //####### Skill ########
     //FETCH
-    @GetMapping("/{userId}/skills")
+    @GetMapping("/user/{userId}/skills")
     List<SkillDTO> getSkillListByUserId(@PathVariable Integer userId){
         return  skillService.getSkillListByUserId(userId);
     }
     // CREATE
-    @PostMapping("/{userId}/skills")
+    @PostMapping("/user/{userId}/skills")
     SkillDTO createSkill(
             @PathVariable Integer userId,
             @RequestBody SkillDTO skillDTO){
         return skillService.createSkill(userId, skillDTO);
     }
     // UPDATE
-    @PutMapping("/{userId}/skills/{skillId}")
+    @PutMapping("/user/{userId}/skills/{skillId}")
     SkillDTO updateSkill(
             @PathVariable Integer userId,
             @PathVariable Integer skillId,
@@ -149,7 +156,7 @@ public class ProfileController {
         return skillService.updateSkill(userId, skillId, skillDTO);
     }
     // DELETE
-    @DeleteMapping("/{userId}/skills/{skillId}")
+    @DeleteMapping("/user/{userId}/skills/{skillId}")
     ResponseEntity<?> deleteSkill(
             @PathVariable Integer userId,
             @PathVariable Integer skillId) {

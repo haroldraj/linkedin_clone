@@ -1,7 +1,12 @@
 
 ###
+#get profile by profileId
+GET http://localhost:8080/api/profiles/96
+
+###
 #get profile by his userid
-GET http://localhost:8080/api/profiles/94
+GET http://localhost:8080/api/profiles/user/96
+
 
 ###
 #edit profile for the user
@@ -33,7 +38,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8080/profiles/80/experiences
+POST http://localhost:8080/profiles/96/experiences
 Content-Type: application/json
 
 {
@@ -60,7 +65,7 @@ Content-Type: application/json
 DELETE http://localhost:8080/profiles/96/experiences/10
 
 ###
-POST http://localhost:8082/profiles/80/skills
+POST http://localhost:8082/profiles/96/skills
 Content-Type: application/json
 
 {
@@ -79,7 +84,7 @@ Content-Type: application/json
 DELETE http://localhost:8082/profiles/96/skills/80
 
 ###
-POST http://localhost:8082/profiles/80/educations
+POST http://localhost:8082/profiles/96/educations
 Content-Type: application/json
 
 {

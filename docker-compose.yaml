@@ -47,7 +47,6 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mariadb://db-user:3306/linkedin_user
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-    
 
   api-profile:
     container_name: linkedin-api-profile
@@ -60,6 +59,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mariadb://db-profile:3306/linkedin_profile
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+      LINKEDIN_USER_HOST: api-user
   
   api-post:
     container_name: linkedin-api-post
@@ -72,6 +72,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mariadb://db-post:3306/linkedin_post
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+      LINKEDIN_PROFILE_HOST: api-profile
 
   api-bff:
     container_name: linkedin-api-bff

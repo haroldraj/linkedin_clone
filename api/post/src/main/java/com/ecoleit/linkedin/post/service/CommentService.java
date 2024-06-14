@@ -3,6 +3,7 @@ package com.ecoleit.linkedin.post.service;
 import com.ecoleit.linkedin.post.entity.Comment;
 import com.ecoleit.linkedin.post.entity.Post;
 import com.ecoleit.linkedin.post.modele.CommentDTO;
+import com.ecoleit.linkedin.post.modele.CommentWithProfileDTO;
 import com.ecoleit.linkedin.post.repository.CommentRepository;
 import com.ecoleit.linkedin.post.repository.PostRepository;
 import org.springframework.stereotype.Service;
@@ -15,26 +16,28 @@ import java.util.Optional;
 public class CommentService {
     private final CommentRepository commentRepository;
     private  final PostRepository postRepository;
+    private final ProfileService profileService;
 
-    public CommentService(CommentRepository commentRepository, PostRepository postRepository) {
+    public CommentService(CommentRepository commentRepository, PostRepository postRepository, ProfileService profileService) {
         this.commentRepository = commentRepository;
         this.postRepository = postRepository;
+        this.profileService = profileService;
     }
 
-    public List<CommentDTO> getCommentList(){
+    public List<CommentWithProfileDTO> getCommentList(){
         return commentRepository
                 .findAll()
                 .stream()
                 .map(comment ->
-                        new CommentDTO(
+                        new CommentWithProfileDTO(
                                 comment.getId(),
-                                comment.getProfileId(),
+                                profileService.getProfileById(comment.getProfileId()),
                                 comment.getContent(),
                                 comment.getCreationDate()))
                 .toList();
     }
 
-    public CommentDTO createComment(Integer postId, CommentDTO commentDTO) {
+    public CommentWithProfileDTO createComment(Integer postId, CommentDTO commentDTO) {
         Optional<Post> optionalPost = postRepository.findById(postId);
 
         if (optionalPost.isPresent()) {
@@ -49,9 +52,9 @@ public class CommentService {
 
             Comment savedComment = commentRepository.save(newComment);
 
-            return new CommentDTO(
+            return new CommentWithProfileDTO(
                     savedComment.getId(),
-                    savedComment.getProfileId(),
+                    profileService.getProfileById(savedComment.getProfileId()),
                     savedComment.getContent(),
                     savedComment.getCreationDate()
             );
@@ -61,18 +64,18 @@ public class CommentService {
         }
     }
 
-    public CommentDTO updateComment(Integer commentId, CommentDTO commentDTO) {
+    public CommentWithProfileDTO updateComment(Integer commentId, CommentWithProfileDTO commentWithProfileDTO) {
         Optional<Comment> optionalComment = commentRepository.findById(commentId);
 
         if (optionalComment.isPresent()) {
             Comment existingComment = optionalComment.get();
-            existingComment.setContent(commentDTO.content());
+            existingComment.setContent(commentWithProfileDTO.content());
 
             Comment updatedComment = commentRepository.save(existingComment);
 
-            return new CommentDTO(
+            return new CommentWithProfileDTO(
                     updatedComment.getId(),
-                    updatedComment.getProfileId(),
+                    profileService.getProfileById(updatedComment.getProfileId()),
                     updatedComment.getContent(),
                     updatedComment.getCreationDate()
             );
@@ -85,13 +88,13 @@ public class CommentService {
         commentRepository.deleteById(commentId);
     }
 
-    public List<CommentDTO> getCommentsByPostId(Integer postId) {
+    public List<CommentWithProfileDTO> getCommentsByPostId(Integer postId) {
         List<Comment> comments = commentRepository.findByPostId(postId);
         return comments.stream()
                 .map(comment ->
-                        new CommentDTO(
+                        new CommentWithProfileDTO(
                                 comment.getId(),
-                                comment.getProfileId(),
+                                profileService.getProfileById(comment.getProfileId()),
                                 comment.getContent(),
                                 comment.getCreationDate()))
                 .toList();
