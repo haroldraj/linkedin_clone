@@ -1,45 +1,21 @@
-/*import React, { useEffect, useState } from 'react';
-import PostCard from '../components/PostCard';
-import postAPI from '../api/postAPI';
-
-const HomePage: React.FC = () => {
-    const [posts, setPosts] = useState<any[]>([]);
-
-    useEffect(() => {
-        const fetchPosts = async () => {
-            const data = await postAPI.getAllPosts();
-            setPosts(data);
-        };
-        fetchPosts();
-    }, []);
-
-    return (
-        <div style={{ padding: '20px' }}>
-            <h1>Home Page</h1>
-            {posts.map(post => (
-                <PostCard key={post.id} post={post} />
-            ))}
-        </div>
-    );
-};
-
-export default HomePage;*/
-// Mine
-
+import Feed from "../components/Feed";
 import Header from "../components/header/Header";
-
-//import Header from "../components/header/Header";
+import Sidebar from "../components/Sidebar";
+import './../App.css'
 
 export default function HomePage()
 {
     return (
-        <div>
+        <div className="app">
             <Header />
-            <div className="text-3xl text-center">HomePage</div>
-            {/* App Body */}
-            {/* Sidebar */}
-            {/* Feed */}
-            {/* Widget */}
-        </div>);
+            <div className="app_body">
+                <Sidebar /> 
+                <Feed />
+                {/* Feed */}
+                {/* Widget */}
+            </div>
+            
+        </div>
+    );
 }
 
