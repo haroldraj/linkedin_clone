@@ -1,0 +1,51 @@
+.feed {
+    flex: 0.6;
+    margin: 0 20px;
+}
+
+.feed_topInput {
+    display: flex;
+    //justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.feed_inputContainer {
+    //display: flex;
+    //justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+.feed_input {
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    padding: 10px;
+    width: 100%;
+    color: gray;
+    padding-left: 15px;
+    background-color: #f3f2f9;
+}
+
+.feed_inputAvatar {
+    margin-right: 10px;
+}
+
+.feed_input:hover {
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+    padding-left: 15px;
+    background-color: #f3f2f9;
+}
+
+.feed_inputOptions {
+    display: flex;
+    justify-content: space-evenly;
+}
