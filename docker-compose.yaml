@@ -60,6 +60,8 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
       LINKEDIN_USER_HOST: api-user
+    #ports:
+     # - "8082:8082"
   
   api-post:
     container_name: linkedin-api-post
@@ -86,20 +88,20 @@ services:
       LINKEDIN_PROFILE_HOST: api-profile
       LINKEDIN_POST_HOST: api-post
     ports:
-      - "3001:3001"
+      - "8080:8080"
   
-  web:
-    container_name: linkedin-web
-    build:
-      context: web
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - "3002:3002"
-    networks:
-      - spring-cloud-network
-    depends_on:
-      - api-bff
+  #web:
+    #container_name: linkedin-web
+    #build:
+      #context: web
+      #dockerfile: Dockerfile
+    #restart: always
+    #ports:
+      #- "3002:3002"
+    #networks:
+      #- spring-cloud-network
+    #depends_on:
+      #- api-bff
 
 networks:
   spring-cloud-network:

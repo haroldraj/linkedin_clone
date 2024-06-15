@@ -111,7 +111,7 @@ Content-Type: application/json
 DELETE http://localhost:8082/profiles/111/educations/36
 
 ###
-POST http://localhost:8082/profiles/80/connections?otherUserId=96
+POST http://localhost:8082/profiles/92/connections?otherUserId=96
 
 ###
 DELETE http://localhost:8082/profiles/96/connections?otherUserId=95
