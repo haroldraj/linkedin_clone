@@ -1,28 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/common/Header';
-import Footer from './components/Common/Footer.jsx';
-import NewPostForm from './components/NewPost/NewPostForm';
-import UserProfile from './components/Profile/UserProfile';
-import Home from './components/Home/Home';
-import './App.module.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import NewPostPage from './pages/NewPostPage';
+import PostPage from './pages/PostPage';
+import UserProfilePage from './pages/UserProfilePage';
+import NotFoundPage from './pages/NotFoundPage';  // Ensure you have a NotFoundPage component
 
-function App() {
-    const [userProfile, setUserProfile] = useState({});
-
+const App: React.FC = () => {
     return (
         <Router>
-            <Header userProfile={userProfile} />
-            <div className="app-container">
-                <Routes>
-                    <Route path="/" element={<Home userProfile={userProfile} setUserProfile={setUserProfile} />} />
-                    <Route path="/profile/:id" element={<UserProfile userProfile={userProfile} setUserProfile={setUserProfile} />} />
-                    <Route path="/new-post" element={<NewPostForm />} />
-                </Routes>
+            <div className="min-h-screen flex flex-col">
+                <Header />
+                <main className="flex-grow container mx-auto px-4 py-6">
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/new-post" element={<NewPostPage />} />
+                        <Route path="/post/:id" element={<PostPage />} />
+                        <Route path="/profile/:id" element={<UserProfilePage />} />
+                        <Route path="*" element={<NotFoundPage />} />
+                    </Routes>
+                </main>
+                <Footer />
             </div>
-            <Footer />
         </Router>
     );
-}
+};
 
 export default App;

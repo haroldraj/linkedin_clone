@@ -4,13 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="ProfileServer update">
+    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Api directory creation">
+      <change afterPath="$PROJECT_DIR$/web/src/api/postAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/api/profileAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/api/userAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Hello.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/NavigationBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/PostCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/UserProfileBrief.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/HomePage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/NewPostPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/NotFoundPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/PostPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/UserProfilePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Footer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Footer.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Header.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Header.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/NewPost/NewPostForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/NewPost/NewPostForm.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/NewPost/NewPostService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/EditProfile.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/EditProfile.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/PostCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/ProfileService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/UserProfile.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/UserProfile.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/UserProfileBrief.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/hooks/usePostData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/hooks/useProfileData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/utils/apiClient.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/utils/authService.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +52,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="HomePost" />
+        <entry key="$PROJECT_DIR$" value="feature/home-post-page" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,11 +72,12 @@
     &quot;accountId&quot;: &quot;5b84027c-e2f4-46d2-ab24-63d64bb9000c&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -67,7 +100,6 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
     "npm.dev.executor": "Run",
     "ts.external.directory.path": "D:\\ECOLEIT\\4DWRP\\new\\linkedin_clone\\web\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -78,17 +110,7 @@
       <recent name="D:\ECOLEIT\4DWRP\linkedin_clone\web\src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/web/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/web/package.json" />
       <command value="run" />
@@ -102,17 +124,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -124,10 +137,7 @@
       <updated>1716466795311</updated>
       <workItem from="1716466796665" duration="39000" />
       <workItem from="1717158075993" duration="2633000" />
-      <workItem from="1717739452021" duration="4923000" />
-      <workItem from="1718031005913" duration="1173000" />
-      <workItem from="1718036547219" duration="4693000" />
-      <workItem from="1718173940465" duration="608000" />
+      <workItem from="1717739452021" duration="3473000" />
     </task>
     <task id="LOCAL-00001" summary="Project simple layout done">
       <option name="closed" value="true" />
@@ -153,169 +163,16 @@
       <option name="project" value="LOCAL" />
       <updated>1717742046994</updated>
     </task>
-    <task id="LOCAL-00004" summary="Api directory update  and Users/profile components">
-      <option name="closed" value="true" />
-      <created>1717743157975</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1717743157975</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Utils , Users Validation">
-      <option name="closed" value="true" />
-      <created>1717743742940</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1717743742940</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Header updated">
-      <option name="closed" value="true" />
-      <created>1718041753715</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1718041753715</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Footer creation">
-      <option name="closed" value="true" />
-      <created>1718041838076</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1718041838076</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Layout adjustments">
-      <option name="closed" value="true" />
-      <created>1718042298702</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1718042298702</updated>
-    </task>
-    <task id="LOCAL-00009" summary="New Post implementation">
-      <option name="closed" value="true" />
-      <created>1718043337334</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1718043337334</updated>
-    </task>
-    <task id="LOCAL-00010" summary="UserProfile implementation view">
-      <option name="closed" value="true" />
-      <created>1718043417767</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1718043417767</updated>
-    </task>
-    <task id="LOCAL-00011" summary="UserProfile implementation view">
-      <option name="closed" value="true" />
-      <created>1718043495350</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1718043495350</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Userprof service view">
-      <option name="closed" value="true" />
-      <created>1718043557275</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1718043557275</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Userprof service view">
-      <option name="closed" value="true" />
-      <created>1718043576843</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1718043576843</updated>
-    </task>
-    <task id="LOCAL-00014" summary="utils files">
-      <option name="closed" value="true" />
-      <created>1718174255181</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1718174255181</updated>
-    </task>
-    <task id="LOCAL-00015" summary="routes defining">
-      <option name="closed" value="true" />
-      <created>1718174346858</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1718174346858</updated>
-    </task>
-    <task id="LOCAL-00016" summary="app and client related to authservice adjusted">
-      <option name="closed" value="true" />
-      <created>1718174501818</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1718174501818</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Post Card">
-      <option name="closed" value="true" />
-      <created>1718444675768</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1718444675768</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Userprofile update">
-      <option name="closed" value="true" />
-      <created>1718444722553</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1718444722553</updated>
-    </task>
-    <task id="LOCAL-00019" summary="ProfileServer update">
-      <option name="closed" value="true" />
-      <created>1718444766971</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1718444766971</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project simple layout done" />
     <MESSAGE value="Basic Bars and pages creation" />
     <MESSAGE value="Api directory creation" />
-    <MESSAGE value="Api directory update  and Users/profile components" />
-    <MESSAGE value="Utils , Users Validation" />
-    <MESSAGE value="Header updated" />
-    <MESSAGE value="Footer creation" />
-    <MESSAGE value="Layout adjustments" />
-    <MESSAGE value="New Post implementation" />
-    <MESSAGE value="UserProfile implementation view" />
-    <MESSAGE value="Userprof service view" />
-    <MESSAGE value="utils files" />
-    <MESSAGE value="routes defining" />
-    <MESSAGE value="app and client related to authservice adjusted" />
-    <MESSAGE value="Post Card" />
-    <MESSAGE value="Userprofile update" />
-    <MESSAGE value="ProfileServer update" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProfileServer update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Api directory creation" />
   </component>
 </project>
