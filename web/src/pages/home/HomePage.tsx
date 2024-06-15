@@ -12,10 +12,7 @@ export default function HomePage()
                 <Sidebar />
                 <Feed />
                 <Sidebar />
-                {/* Feed */}
-                {/* Widget */}
             </div>
-
         </div>
     );
 }
