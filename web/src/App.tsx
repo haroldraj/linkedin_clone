@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/common/Header';
-import Footer from './components/common/Footer';
+import Footer from './components/Common/Footer.jsx';
 import NewPostForm from './components/NewPost/NewPostForm';
 import UserProfile from './components/Profile/UserProfile';
 import Home from './components/Home/Home';
