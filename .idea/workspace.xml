@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="app and client related to authservice adjusted">
-      <change afterPath="$PROJECT_DIR$/web/src/components/Profile/PostCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/Profile/UserProfileBrief.tsx" afterDir="false" />
+    <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Post Card">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/UserProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Profile/UserProfile.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718174501818</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Post Card">
+      <option name="closed" value="true" />
+      <created>1718444675768</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718444675768</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,6 +290,7 @@
     <MESSAGE value="utils files" />
     <MESSAGE value="routes defining" />
     <MESSAGE value="app and client related to authservice adjusted" />
-    <option name="LAST_COMMIT_MESSAGE" value="app and client related to authservice adjusted" />
+    <MESSAGE value="Post Card" />
+    <option name="LAST_COMMIT_MESSAGE" value="Post Card" />
   </component>
 </project>

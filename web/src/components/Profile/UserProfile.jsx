@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Button, Image, Container, Row, Col } from 'react-bootstrap';
+import { Container, Button, Modal } from 'react-bootstrap';
 import ProfileService from './ProfileService';
+import UserProfileBrief from './UserProfileBrief';
+import PostCard from './PostCard';
 import './UserProfile.module.css';
 import EditProfile from './EditProfile';
 
 const UserProfile = ({ userProfile, setUserProfile }) => {
     const [editMode, setEditMode] = useState(false);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -21,22 +24,46 @@ const UserProfile = ({ userProfile, setUserProfile }) => {
         fetchProfile();
     }, [userProfile.id, setUserProfile]);
 
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await ProfileService.getPostsByUser(userProfile.id);
+                if (response.status === 200) {
+                    setPosts(response.data);
+                }
+            } catch (error) {
+                console.error('Error fetching posts', error);
+            }
+        };
+        fetchPosts();
+    }, [userProfile.id]);
+
+    const handleEdit = (postId) => {
+        // Handle edit post logic
+    };
+
+    const handleDelete = async (postId) => {
+        try {
+            await ProfileService.deletePost(postId);
+            setPosts(posts.filter(post => post.id !== postId));
+        } catch (error) {
+            console.error('Error deleting post', error);
+        }
+    };
+
     return (
         <Container className="profile-container">
-            <Card className="profile-card">
-                <Card.Body>
-                    <div className="profile-header">
-                        <Image src={userProfile.image} roundedCircle className="profile-image" />
-                        <div className="profile-details">
-                            <Card.Title>{userProfile.name} {userProfile.surname}</Card.Title>
-                            <Card.Text>{userProfile.title}</Card.Text>
-                            <Card.Text>{userProfile.location}</Card.Text>
-                        </div>
-                        <Button variant="outline-primary" onClick={() => setEditMode(true)}>Edit Profile</Button>
-                    </div>
-                </Card.Body>
-            </Card>
-            {editMode && <EditProfile userProfile={userProfile} setUserProfile={setUserProfile} setEditMode={setEditMode} />}
+            <UserProfileBrief userProfile={userProfile} />
+            <Button variant="outline-primary" onClick={() => setEditMode(true)}>Edit Profile</Button>
+            {editMode && (
+                <Modal show={true} onHide={() => setEditMode(false)}>
+                    <EditProfile userProfile={userProfile} setUserProfile={setUserProfile} setEditMode={setEditMode} />
+                </Modal>
+            )}
+            <h3 className="mt-4">Posts</h3>
+            {posts.map(post => (
+                <PostCard key={post.id} post={post} onEdit={handleEdit} onDelete={handleDelete} />
+            ))}
         </Container>
     );
 };
