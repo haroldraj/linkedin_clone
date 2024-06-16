@@ -1,5 +1,5 @@
 import { Avatar } from '@material-ui/core';
-import './Post.css'
+import './PostCard.css'
 import InputOption from '../../pages/home/components/InputOption';
 import { InsertCommentOutlined, LoopOutlined, SendOutlined, ThumbUpAltOutlined } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
@@ -9,13 +9,14 @@ interface Props
     name: string;
     description: string;
     content: string;
+    profileId: number;
 }
 
-export default function Post({ name, description, content }: Props)
+export default function PostCard({ name, description, content, profileId }: Props)
 {
     return (
         <div className='post'>
-            <Link to='/profile/4'>
+            <Link to={`/profile/${profileId}`}>
                 <div className="post_header">
                     <Avatar className='post_avatar' />
                     <div className="post_info">

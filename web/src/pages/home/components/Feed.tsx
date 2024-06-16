@@ -1,65 +1,73 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Avatar } from '@material-ui/core';
 import './Feed.css';
-import CreatePostPopup from '../../../components/CreatePostPopup'; // Import your popup component
 import InputOption from './InputOption';
 import { CalendarViewDay, Image, MessageSharp } from '@material-ui/icons';
-import Post from '../../../components/posts/Post';
-import useFetch from 'react-fetch-hook';
+import Post from '../../../components/posts/PostCard';
 import { PostInfo } from '../../../utils/post-info';
-
+import { Link } from 'react-router-dom';
+import postAPI from '../../../api/postAPI';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
 export default function Feed()
 {
-    const [showPopup, setShowPopup] = useState(false);
-
-    const handleFeedInputClick = () => setShowPopup(true);
-    const handleClosePopup = () => setShowPopup(false);
-
-    const { data: PostData, isLoading, error } = useFetch<PostInfo[]>('http://localhost:8080/api/posts');
-
-    if (isLoading)
+    const [posts, setPosts] = useState<PostInfo[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
+    useEffect(() =>
     {
-        return <h2>Loading data...</h2>
-    }
+        const fetchPosts = async () =>
+        {
+            setIsLoading(true);
+            try
+            {
+                const fetchedPosts = await postAPI.getAllPosts();
+                setPosts(fetchedPosts);
+            } catch (error)
+            {
+                console.error('Failed to fetch posts:', error);
+            }
+            setIsLoading(false);
+        };
 
-    if (error)
-    {
-        return <div className="error">Error: error fetching</div>
-    }
-
-
+        fetchPosts();
+    }, []);
 
     return (
         <div className='feed'>
-            <div className="feed_inputContainer">
-                <div className='feed_topInput'>
-                    <Avatar className='feed_inputAvatar' />
-                    <div className="feed_input" onClick={handleFeedInputClick}>
-                        Write a new post
+            {isLoading ? (
+                <CircularProgress />
+            ) : (
+                <>
+                    <div className="feed_inputContainer">
+                        <div className='feed_topInput'>
+                            <Avatar className='feed_inputAvatar' />
+                            <Link to='/new-post'>
+                                <div className="feed_input" >
+                                    Write a new post
+                                </div>
+                            </Link>
+
+                        </div>
+                        <div className="feed_inputOptions">
+                            <InputOption title='Media' Icon={Image} color='#70B5F9' />
+                            <InputOption title='Contribute expertise' Icon={MessageSharp} color='#E7A33E' />
+                            <InputOption title='Write article' Icon={CalendarViewDay} color='#7FC15E' />
+                        </div>
                     </div>
-                </div>
-                <div className="feed_inputOptions">
-                    <InputOption title='Media' Icon={Image} color='#70B5F9' />
-                    <InputOption title='Contribute expertise' Icon={MessageSharp} color='#E7A33E' />
-                    <InputOption title='Write article' Icon={CalendarViewDay} color='#7FC15E' />
-                </div>
-            </div>
 
-            {
-                PostData && PostData.map((post) => (
-                    <Post key={post.id}
-                        name={post.profile.user.firstName + ' ' + post.profile.user.lastName}
-                        description={post.profile.summary}
-                        content={post.content}
-                    />
-                ))
-            }
-
-
-            {showPopup && <CreatePostPopup onClose={handleClosePopup} />}
-        </div>
-    );
+                    {
+                        posts && posts.map((post) => (
+                            <Post key={post.id}
+                                name={post.profile.user.firstName + ' ' + post.profile.user.lastName}
+                                description={post.profile.summary}
+                                content={post.content} profileId={post.profile.id}
+                            />
+                        ))
+                            
+                    }
+                </>
+            )}
+        </div>);
 }

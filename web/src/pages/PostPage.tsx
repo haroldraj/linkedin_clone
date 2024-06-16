@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import postAPI from '../api/postAPI';  // Ensure you have this API utility to fetch post details
+import postAPI from '../api/postAPI'; 
+import { PostInfo } from '../utils/post-info';
 
 const PostPage: React.FC = () => {
-    const { id } = useParams<{ id: string }>();  // Extracting the post ID from the URL
-    const [post, setPost] = useState<any>(null);
+    const { id } = useParams<{ id: string }>();
+    const [post, setPost] = useState<PostInfo>();
 
     useEffect(() => {
         const fetchPost = async () => {

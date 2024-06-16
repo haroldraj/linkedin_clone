@@ -1,44 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import NewPostPage from './pages/NewPostPage';
-import PostPage from './pages/PostPage';
-import UserProfilePage from './pages/UserProfilePage';
-import NotFoundPage from './pages/NotFoundPage';  // Ensure you have a NotFoundPage component
+//import Footer from './components/Footer';
 import Header from './components/header/Header';
 import CustomRoutes from './Routes';
 
 const App: React.FC = () => {
     return (
         <Router>
-            <div className="min-h-screen flex flex-col">
+            {/*className="min-h-screen flex flex-col"*/}
+            <div >
                 <Header />
-                <main className="flex-grow container mx-auto px-4 py-6">
+                <main >
+                    {/*className="flex-grow container mx-auto px-4 py-6"*/}
                    <CustomRoutes/>
                 </main>
-                <Footer />
+                {/*<Footer />*/}
             </div>
         </Router>
     );
 };
 
-/*
-
-import { RouterProvider } from "react-router-dom";
-import router from "./Router";
-
-
-
-function App()
-{
-    return (
-        
-            <RouterProvider router={router} />
-     
-    );
-}
-*/
 export default App;
 

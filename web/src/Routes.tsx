@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import PostPage from "./pages/PostPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -21,6 +21,9 @@ export default function CustomRoutes() {
           <Route path="/messaging" element={<MessagingPage />} />
           <Route path="/network" element={<NetworkPage />} />
           <Route path="/jobs" element={<JobsPage />} />
+          <Route path="/post" element={<PostsPage />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/new-post" element={<NewPostPage />} />
           <Route path="/post/:id" element={<PostPage />} />
           <Route path="/profile/:id" element={<UserProfilePage />} />
@@ -28,39 +31,3 @@ export default function CustomRoutes() {
       </Routes>
   )
 }
-
-
-const router = createBrowserRouter([
- 
-    {
-        path: '/notifications',
-        element: <NotificationsPage />,
-
-    },
-    {
-        path: '/profile',
-        element: <ProfilePage />,
-        children: [
-            {
-                path: '/profile/:profileId',
-                element: <ProfilePage />
-            }
-        ]
-    }
-    ,
-    {
-        path: '/post',
-        element: <PostsPage />,
-        children: [
-
-            {
-                path: '/post/:postId',
-                element: <PostPage />
-            }
-        ]
-    },
-    {
-        path: '*',
-        element: <NotFoundPage />
-    }
-]);
