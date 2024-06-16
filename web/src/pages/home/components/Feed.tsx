@@ -5,20 +5,32 @@ import CreatePostPopup from '../../../components/CreatePostPopup'; // Import you
 import InputOption from './InputOption';
 import { CalendarViewDay, Image, MessageSharp } from '@material-ui/icons';
 import Post from '../../../components/posts/Post';
+import useFetch from 'react-fetch-hook';
+import { PostInfo } from '../../../utils/post-info';
+
+
+
 
 export default function Feed()
 {
     const [showPopup, setShowPopup] = useState(false);
 
-    const handleFeedInputClick = () =>
-    {
-        setShowPopup(true);
-    };
+    const handleFeedInputClick = () => setShowPopup(true);
+    const handleClosePopup = () => setShowPopup(false);
 
-    const handleClosePopup = () =>
+    const { data: PostData, isLoading, error } = useFetch<PostInfo[]>('http://localhost:8080/api/posts');
+
+    if (isLoading)
     {
-        setShowPopup(false);
-    };
+        return <h2>Loading data...</h2>
+    }
+
+    if (error)
+    {
+        return <div className="error">Error: error fetching</div>
+    }
+
+
 
     return (
         <div className='feed'>
@@ -35,31 +47,17 @@ export default function Feed()
                     <InputOption title='Write article' Icon={CalendarViewDay} color='#7FC15E' />
                 </div>
             </div>
-            <Post
-                name='Harold Rajaonarison'
-                description='developer'
-                content='First post'
-            />
-            <Post
-                name='Harold Rajaonarison'
-                description='developer'
-                content='First post'
-            />
-            <Post
-                name='Harold Rajaonarison'
-                description='developer'
-                content='First post'
-            />
-            <Post
-                name='Harold Rajaonarison'
-                description='developer'
-                content='First post'
-            />
-            <Post
-                name='Harold Rajaonarison'
-                description='developer'
-                content='First post'
-            />
+
+            {
+                PostData && PostData.map((post) => (
+                    <Post key={post.id}
+                        name={post.profile.user.firstName + ' ' + post.profile.user.lastName}
+                        description={post.profile.summary}
+                        content={post.content}
+                    />
+                ))
+            }
+
 
             {showPopup && <CreatePostPopup onClose={handleClosePopup} />}
         </div>

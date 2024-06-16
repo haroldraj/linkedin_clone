@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Button, Image, Container, Row, Col } from 'react-bootstrap';
+import { Card, Button, Image, Container } from 'react-bootstrap';
 import ProfileService from './ProfileService';
 import './UserProfile.module.css';
 import EditProfile from './EditProfile';
