@@ -9,23 +9,24 @@ import JobsPage from "./pages/JobsPage";
 import MessagingPage from "./pages/MessagingPage";
 import { Routes, Route } from 'react-router-dom';
 import NewPostPage from "./pages/NewPostPage";
-import UserProfilePage from "./pages/UserProfilePage";
+import UserProfilePage from "./pages/profile/UserProfilePage";
 
 
-export default function CustomRoutes() {
-  return (
-      <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/messaging" element={<MessagingPage />} />
-          <Route path="/network" element={<NetworkPage />} />
-          <Route path="/jobs" element={<JobsPage />} />
-          <Route path="/notifications" element={<NotificationsPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/new-post" element={<NewPostPage />} />
-          <Route path="/post/:id" element={<PostPage />} />
-          <Route path="/profile/:id" element={<UserProfilePage />} />
-          <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-  )
+export default function CustomRoutes()
+{
+    return (
+        <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/messaging" element={<MessagingPage />} />
+            <Route path="/network" element={<NetworkPage />} />
+            <Route path="/jobs" element={<JobsPage />} />
+            <Route path="/notifications" element={<NotificationsPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/new-post" element={<NewPostPage />} />
+            <Route path="/post/:id" element={<PostPage />} />
+            <Route path="/profile/:id" element={<UserProfilePage />} />
+            <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+    )
 }
