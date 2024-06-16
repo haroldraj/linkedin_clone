@@ -51,7 +51,7 @@ To start the applications, in the root directory of the project, run the followi
 
 ```bash
 #Just run the following command to run the project
-docker-compose up
+docker-compose up --build
 
 ```
 
