@@ -6,7 +6,7 @@ GET http://localhost:8082/experiences
 GET http://localhost:8082/profiles/96/experiences
 
 ###
-POST http://localhost:8082/profiles/80/experiences
+POST http://localhost:8082/profiles/96/experiences
 Content-Type: application/json
 
 {

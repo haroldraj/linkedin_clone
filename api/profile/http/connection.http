@@ -3,7 +3,7 @@
 GET http://localhost:8082/connections
 
 ###
-GET http://localhost:8082/profiles/96/connections
+GET http://localhost:8082/profiles/92/connections
 
 ###
 POST http://localhost:8082/profiles/80/connections?otherUserId=96

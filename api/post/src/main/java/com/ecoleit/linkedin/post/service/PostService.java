@@ -1,9 +1,7 @@
 package com.ecoleit.linkedin.post.service;
 
 import com.ecoleit.linkedin.post.entity.Post;
-import com.ecoleit.linkedin.post.modele.CommentDTO;
-import com.ecoleit.linkedin.post.modele.PostDTO;
-import com.ecoleit.linkedin.post.modele.PostWithCommentDTO;
+import com.ecoleit.linkedin.post.modele.*;
 import com.ecoleit.linkedin.post.repository.PostRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,21 +13,24 @@ import java.util.Optional;
 public class PostService {
     private final PostRepository postRepository;
     private final CommentService commentService;
+    private final ProfileService profileService;
 
-    public PostService(PostRepository postRepository, CommentService commentService) {
+    public PostService(PostRepository postRepository, CommentService commentService, ProfileService profileService) {
         this.postRepository = postRepository;
         this.commentService = commentService;
+        this.profileService = profileService;
     }
-    private PostDTO convertToPostDTO(Post post){
-        return new PostDTO(
+    private PostWithProfileDTO convertToPostDTO(Post post){
+        ProfileDTO profileDTO = profileService.getProfileById(post.getProfileId());
+        return new PostWithProfileDTO(
                 post.getId(),
-                post.getProfileId(),
+                profileDTO,
                 post.getTitle(),
                 post.getContent(),
                 post.getCreationDate());
     }
 
-    public List<PostDTO> getPostList(){
+    public List<PostWithProfileDTO> getPostList(){
         return postRepository
                 .findAll()
                 .stream()
@@ -37,13 +38,13 @@ public class PostService {
                 .toList();
     }
 
-    public PostDTO getPostById(Integer postId) {
+    public PostWithProfileDTO getPostById(Integer postId) {
         return postRepository.findById(postId)
                 .map(this::convertToPostDTO)
                 .orElse(null);
     }
 
-    public PostDTO createPost(PostDTO postDTO) {
+    public PostWithProfileDTO createPost(PostDTO postDTO) {
         Post newPost = new Post();
         newPost.setProfileId(postDTO.profileId());
         newPost.setTitle(postDTO.title());
@@ -51,17 +52,17 @@ public class PostService {
         newPost.setCreationDate(new Timestamp(System.currentTimeMillis()));
 
         Post savedPost = postRepository.save(newPost);
-
-        return new PostDTO(
+        ProfileDTO profile = profileService.getProfileById(savedPost.getProfileId());
+        return new PostWithProfileDTO(
                 savedPost.getId(),
-                savedPost.getProfileId(),
+                profile,
                 savedPost.getTitle(),
                 savedPost.getContent(),
                 savedPost.getCreationDate()
         );
     }
 
-    public PostDTO updatePost(Integer postId, PostDTO postDTO) {
+    public PostWithProfileDTO updatePost(Integer postId, PostDTO postDTO) {
         Optional<Post> optionalPost = postRepository.findById(postId);
 
         if (optionalPost.isPresent()) {
@@ -70,10 +71,10 @@ public class PostService {
             existingPost.setContent(postDTO.content());
 
             Post updatedPost = postRepository.save(existingPost);
-
-            return new PostDTO(
+            ProfileDTO profile = profileService.getProfileById(updatedPost.getProfileId());
+            return new PostWithProfileDTO(
                     updatedPost.getId(),
-                    updatedPost.getProfileId(),
+                    profile,
                     updatedPost.getTitle(),
                     updatedPost.getContent(),
                     updatedPost.getCreationDate()
@@ -89,16 +90,16 @@ public class PostService {
 
 
 
-    public PostWithCommentDTO getPostWithComments(Integer postId) {
+    public PostWithCommentWithProfileDTO getPostWithComments(Integer postId) {
         Optional<Post> optionalPost = postRepository.findById(postId);
 
         if (optionalPost.isPresent()) {
             Post post = optionalPost.get();
-            List<CommentDTO> comments =commentService.getCommentsByPostId(postId);
-
-            return new PostWithCommentDTO(
+            List<CommentWithProfileDTO> comments =commentService.getCommentsByPostId(postId);
+            ProfileDTO profile = profileService.getProfileById(post.getProfileId());
+            return new PostWithCommentWithProfileDTO(
                     post.getId(),
-                    post.getProfileId(),
+                    profile,
                     post.getTitle(),
                     post.getContent(),
                     post.getCreationDate(),
@@ -109,23 +110,12 @@ public class PostService {
         }
     }
 
-    public PostWithCommentDTO getPostByProfileId(Integer profileId){
-        Optional<Post> optionalPost = postRepository.findByProfileId(profileId);
-
-        if (optionalPost.isPresent()) {
-            Post post = optionalPost.get();
-            List<CommentDTO> comments =commentService.getCommentsByPostId(post.getId());
-
-            return new PostWithCommentDTO(
-                    post.getId(),
-                    post.getProfileId(),
-                    post.getTitle(),
-                    post.getContent(),
-                    post.getCreationDate(),
-                    comments);
-        } else {
-            throw new RuntimeException("Post not found with id");
-        }
+    public List<PostWithProfileDTO> getPostByProfileId(Integer profileId){
+                return postRepository
+                        .findAllByProfileId(profileId)
+                        .stream()
+                        .map(this::convertToPostDTO)
+                        .toList();
     }
 
 }

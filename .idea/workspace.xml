@@ -5,44 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb293a9e-0102-4848-817a-3d304e5875e2" name="Changes" comment="Api directory creation">
-      <change afterPath="$PROJECT_DIR$/web/src/api/postAPI.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/src/api/profileAPI.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/src/api/userAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/Hello.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/NavigationBar.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/src/components/PostCard.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/src/components/UserProfileBrief.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/HomePage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/NewPostPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/NotFoundPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/PostPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/UserProfilePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Footer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Footer.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Header.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Common/Header.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/NewPost/NewPostForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/NewPost/NewPostForm.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/NewPost/NewPostService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/EditProfile.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/EditProfile.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/PostCard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/ProfileService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/UserProfile.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/UserProfile.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Profile/UserProfileBrief.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/hooks/usePostData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/hooks/useProfileData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/utils/apiClient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/utils/authService.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/home-post-page" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,10 +39,6 @@
     &quot;accountId&quot;: &quot;5b84027c-e2f4-46d2-ab24-63d64bb9000c&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -93,7 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "feature/new-post-profile",
+    "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -101,7 +64,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.dev.executor": "Run",
-    "ts.external.directory.path": "D:\\ECOLEIT\\4DWRP\\new\\linkedin_clone\\web\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\ECOLEIT\\4DWRP\\linkedin_clone\\web\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

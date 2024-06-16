@@ -2,10 +2,13 @@
 GET http://localhost:8083/posts
 
 ###
-GET http://localhost:8083/posts/66/with-comments
+GET http://localhost:8083/posts/profile/82
 
 ###
-GET http://localhost:8083/posts/250
+GET http://localhost:8083/posts/70/with-comments
+
+###
+GET http://localhost:8083/posts/69
 
 
 ###
@@ -13,7 +16,7 @@ POST http://localhost:8083/posts
 Content-Type: application/json
 
 {
-  "profileId": 1,
+  "profileId": 82,
   "title": "Post Title",
   "content": "This is the content of the post."
 }
