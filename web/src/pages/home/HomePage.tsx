@@ -10,7 +10,6 @@ export default function HomePage()
             <div className="home_body">
                 <Sidebar />
                 <Feed />
-
             </div>
         </div>
     );
