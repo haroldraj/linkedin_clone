@@ -1,5 +1,5 @@
-import { Avatar } from '@material-ui/core';
 import './Sidebar.css';
+import UserAvatar from '../../../components/UserAvatar';
 
 export default function Sidebar()
 {
@@ -14,7 +14,7 @@ export default function Sidebar()
       <div className='sidebar'>
           <div className='sidebar_top'>
               <img src="https://img.freepik.com/free-vector/abstract-digital-science-fiction-matrix-like-background_587448-971.jpg" alt="profile_banner" />
-              <Avatar className='sidebar_avatar' />
+              <UserAvatar />
               <h2 className='sidebar_name'>Harold Rajaonarison</h2>
               <h4 className='sidebar_email'>ReactJS | Flutter | Spring Boot</h4>
           </div>

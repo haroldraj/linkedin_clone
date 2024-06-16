@@ -12,7 +12,9 @@ export default function ExperienceSection({ experiences }: Props)
 {
     return (
         <div className="experiences">
-            <h2>Experiences</h2>
+            <div className="experiences_header">
+                <h2>Experiences</h2>
+            </div>
             {
                 experiences && experiences.map((experience) => (
                     <ExperienceCard key={experience.id} experience={experience} />

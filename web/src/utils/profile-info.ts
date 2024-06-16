@@ -35,8 +35,8 @@ export interface ExperienceInfo
 export interface EducationInfo
 {
     id: number;
-    school: number;
-    degree: number;
+    school: string;
+    degree: string;
     filedOfStudy: string;
     startDate: string;
     endDate: string;

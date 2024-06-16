@@ -4,7 +4,8 @@ import profileAPI from '../../api/profileAPI';
 import { ProfileInfo } from '../../utils/profile-info';
 import './UserProfilePage.css';
 import ExperienceSection from './components/experience/ExperienceSection';
-import ActivitySection from './components/ActivitySection';
+import ActivitySection from './components/activity/ActivitySection';
+import { USER_AVATAR_URL } from '../../utils/user-avatar';
 
 const UserProfilePage: React.FC = () =>
 {
@@ -35,7 +36,7 @@ const UserProfilePage: React.FC = () =>
                     <div className='profile_top'>
                         <img src="https://img.freepik.com/free-vector/abstract-digital-science-fiction-matrix-like-background_587448-971.jpg" alt="profile_banner" />
                         <div className="profile_header">
-                            <img className='profile_avatar' src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png" alt="profile_avatar" />
+                            <img className='profile_avatar' src={USER_AVATAR_URL} alt="profile_avatar" />
                             <h2 className='profile_name'>{profile.user.firstName + ' ' + profile.user.lastName}</h2>
                             <h4 className='profile_summary'>{profile.summary}</h4>
                             <p>{profile.headline}</p>

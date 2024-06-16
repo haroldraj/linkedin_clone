@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { PostInfo } from '../../../utils/post-info';
+import { PostInfo } from '../../../../utils/post-info';
 import './ActivitySection.css'
-import postAPI from '../../../api/postAPI';
+import postAPI from '../../../../api/postAPI';
 import { CircularProgress } from '@material-ui/core';
-import Post from './../../../components/posts/PostCard'
+import Post from '../../../../components/posts/PostCard'
+import { Link } from 'react-router-dom';
 
 interface Props
 {
@@ -42,10 +43,14 @@ export default function ActivitySection({ profileId }: Props)
                     <div className="activity-header">
                         <h2>Activity</h2>
                         <p>809 followers</p>
-                        <button className="create-post">Create a post</button>
+                        <Link to='/new-post'>
+                            <button className="create-post">Create a post</button>
+                        </Link>
                     </div>
                     <div className="tabs">
+
                         <button className="tab active">Posts</button>
+
                         <button className="tab">Comments</button>
                     </div>
                     {

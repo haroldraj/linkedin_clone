@@ -1,8 +1,8 @@
-import { Avatar } from '@material-ui/core';
 import './PostCard.css'
 import InputOption from '../../pages/home/components/InputOption';
 import { InsertCommentOutlined, LoopOutlined, SendOutlined, ThumbUpAltOutlined } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
+import UserAvatar from '../UserAvatar';
 
 interface Props
 {
@@ -19,9 +19,9 @@ export default function PostCard({ name, description, content, profileId, title 
         <div className='post'>
             <Link to={`/profile/${profileId}`}>
                 <div className="post_header">
-                    <Avatar className='post_avatar' />
+                    <UserAvatar />
                     <div className="post_info">
-                        <h2>{name}</h2>
+                        <strong>{name}</strong>
                         <p>{description}</p>
                     </div>
                 </div>
@@ -35,6 +35,10 @@ export default function PostCard({ name, description, content, profileId, title 
                 <InputOption Icon={InsertCommentOutlined} title='Comment' color='gray' />
                 <InputOption Icon={LoopOutlined} title='Repost' color='gray' />
                 <InputOption Icon={SendOutlined} title='Send' color='gray' />
+            </div>
+            <div className="add-comment">
+                <UserAvatar/>
+                <input type="text" placeholder="Add a comment..." />
             </div>
         </div>
     )
