@@ -9,8 +9,7 @@ const PostPage: React.FC = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                // @ts-ignore
-                const fetchedPost = await postAPI.getPostById(id);
+                const fetchedPost = await postAPI.getPostById(id ?? '');
                 setPost(fetchedPost);
             } catch (error) {
                 console.error('Failed to fetch post:', error);

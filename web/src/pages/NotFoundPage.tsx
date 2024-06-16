@@ -10,7 +10,7 @@ const NotFoundPage: React.FC = () => {
                 </p>
                 <div className="mt-6 text-center">
                     <a href="/" className="text-blue-500 hover:text-blue-700">
-                        Go back home
+                        Go back to HomePage
                     </a>
                 </div>
             </div>
