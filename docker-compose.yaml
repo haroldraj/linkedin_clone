@@ -90,18 +90,18 @@ services:
     ports:
       - "8080:8080"
   
-  #web:
-    #container_name: linkedin-web
-    #build:
-      #context: web
-      #dockerfile: Dockerfile
-    #restart: always
-    #ports:
-      #- "3002:3002"
-    #networks:
-      #- spring-cloud-network
-    #depends_on:
-      #- api-bff
+  web:
+    container_name: linkedin-web
+    build:
+      context: web
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3002:3002"
+    networks:
+      - spring-cloud-network
+    depends_on:
+      - api-bff
 
 networks:
   spring-cloud-network:

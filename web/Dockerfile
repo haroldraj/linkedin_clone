@@ -1,5 +1,5 @@
 # Build stage
-FROM node:18 AS build
+FROM node:22.2.0 AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --force
