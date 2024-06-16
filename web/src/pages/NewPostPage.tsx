@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import postAPI from '../api/postAPI';  // Assuming you have an API utility for posting data
+import postAPI from '../api/postAPI'; 
+import { useNavigate } from 'react-router-dom';
 
 const NewPostPage: React.FC = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         try {
             await postAPI.createPost({ title, content });
-            setTitle('');  // Clear the form fields after submission
+            setTitle('');  
             setContent('');
             alert('Post created successfully!');
+            navigate('/');
         } catch (error) {
             console.error('Error creating post:', error);
             alert('Failed to create post.');

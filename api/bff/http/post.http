@@ -13,7 +13,7 @@ POST http://localhost:8080/api/posts
 Content-Type: application/json
 
 {
-  "profileId": 90,
+  "profileId": 96,
   "title": "Post Title",
   "content": "This is the content of the post."
 }

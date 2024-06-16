@@ -1,10 +1,8 @@
 import { UserInfo } from "../utils/user-info";
 
-// userAPI.ts
-const API_URL = '/api/users';  // Base URL for the user API
+const API_URL = '/api/users';  
 
 const userAPI = {
-    // Fetch user details by ID
     getUserById: async (id: string) => {
         const response = await fetch(`${API_URL}/${id}`);
         if (!response.ok) {
@@ -13,7 +11,6 @@ const userAPI = {
         return await response.json();
     },
 
-    // Register a new user
     registerUser: async (userData: UserInfo) => {
         const response = await fetch(`${API_URL}/register`, {
             method: 'POST',
@@ -28,7 +25,6 @@ const userAPI = {
         return await response.json();
     },
 
-    // User login
     loginUser: async (credentials: UserInfo) => {
         const response = await fetch(`${API_URL}/login`, {
             method: 'POST',
@@ -43,7 +39,6 @@ const userAPI = {
         return await response.json();
     },
 
-    // Additional user-related methods could be added here
 };
 
 export default userAPI;

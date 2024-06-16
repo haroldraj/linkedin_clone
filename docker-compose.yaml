@@ -88,7 +88,7 @@ services:
       LINKEDIN_PROFILE_HOST: api-profile
       LINKEDIN_POST_HOST: api-post
     ports:
-      - "3000:8080"
+      - "8080:8080"
   
   #web:
     #container_name: linkedin-web

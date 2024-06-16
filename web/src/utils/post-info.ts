@@ -6,7 +6,7 @@ export interface PostInfo
     profile: ProfileInfo;
     title: string;
     content: string;
-    creationDate: string;
+    creationDate: Date;
     comments: CommentInfo[];
 }
 

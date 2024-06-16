@@ -1,10 +1,8 @@
 import { baseURL } from "./baseURL";
 
-// postAPI.ts
-const API_URL = baseURL+'/api/posts';  // Base URL for the posts API
+const API_URL = baseURL + '/api/posts'; 
 
 const postAPI = {
-    // Fetch all posts
     getAllPosts: async () =>
     {
         try
@@ -14,15 +12,35 @@ const postAPI = {
             {
                 throw new Error('Network response was not ok');
             }
-            return await response.json();  // Parses the JSON returned by the server
+            const posts = await response.json();
+            posts.sort((a: { creationDate: Date; }, b: { creationDate: Date; }) =>
+                new Date(b.creationDate).getTime() - new Date(a.creationDate).getTime());
+            return posts;  
         } catch (error)
         {
             console.error('Error fetching posts:', error);
-            throw error;  // Re-throwing the error to be handled by the caller
+            throw error;  
         }
     },
 
-    // Fetch a single post by ID
+    getPostByProfileId: async (id: string) =>
+    {
+        try
+        {
+            const response = await fetch(`${API_URL}/profile/${id}`);
+            if (!response.ok)
+            {
+                throw new Error(`Failed to fetch post with id ${id}`);
+            }
+            return await response.json();  
+        } catch (error)
+        {
+            console.error(`Error fetching post with id ${id}:`, error);
+            throw error;  
+        }
+    },
+
+
     getPostById: async (id: string) =>
     {
         try
@@ -32,17 +50,18 @@ const postAPI = {
             {
                 throw new Error(`Failed to fetch post with id ${id}`);
             }
-            return await response.json();  // Parses the JSON returned by the server
+            return await response.json();  
         } catch (error)
         {
             console.error(`Error fetching post with id ${id}:`, error);
-            throw error;  // Re-throwing the error to be handled by the caller
+            throw error;  
         }
     },
 
-    // Create a new post
+
     createPost: async (post: { title: string; content: string }) =>
     {
+
         try
         {
             const response = await fetch(API_URL, {
@@ -50,17 +69,17 @@ const postAPI = {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(post)  // Converts the JavaScript object to a JSON string
+                body: JSON.stringify({ ...post, profileId: 96 })  
             });
             if (!response.ok)
             {
                 throw new Error('Failed to create post');
             }
-            return await response.json();  // Parses the JSON returned by the server
+            return await response.json();  
         } catch (error)
         {
             console.error('Error creating post:', error);
-            throw error;  // Re-throwing the error to be handled by the caller
+            throw error;  
         }
     },
 };

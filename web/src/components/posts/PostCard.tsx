@@ -10,9 +10,10 @@ interface Props
     description: string;
     content: string;
     profileId: number;
+    title: string;
 }
 
-export default function PostCard({ name, description, content, profileId }: Props)
+export default function PostCard({ name, description, content, profileId, title }: Props)
 {
     return (
         <div className='post'>
@@ -26,6 +27,7 @@ export default function PostCard({ name, description, content, profileId }: Prop
                 </div>
             </Link>
             <div className="post_body">
+                <h3>{title}</h3>
                 <p>{content}</p>
             </div>
             <div className="post_buttons">

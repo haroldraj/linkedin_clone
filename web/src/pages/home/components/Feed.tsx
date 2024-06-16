@@ -63,6 +63,7 @@ export default function Feed()
                                 name={post.profile.user.firstName + ' ' + post.profile.user.lastName}
                                 description={post.profile.summary}
                                 content={post.content} profileId={post.profile.id}
+                                title={post.title}
                             />
                         ))
                             

@@ -2,7 +2,6 @@ import { Navigate } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import PostPage from "./pages/PostPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import PostsPage from "./pages/PostsPage";
 import ProfilePage from "./pages/ProfilePage";
 import NotificationsPage from "./pages/NotificationsPage";
 import NetworkPage from "./pages/NetworkPage";
@@ -21,7 +20,6 @@ export default function CustomRoutes() {
           <Route path="/messaging" element={<MessagingPage />} />
           <Route path="/network" element={<NetworkPage />} />
           <Route path="/jobs" element={<JobsPage />} />
-          <Route path="/post" element={<PostsPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/new-post" element={<NewPostPage />} />
