@@ -3,7 +3,7 @@ import { PostInfo } from '../../../../utils/post-info';
 import './ActivitySection.css'
 import postAPI from '../../../../api/postAPI';
 import { CircularProgress } from '@material-ui/core';
-import Post from '../../../../components/post/PostCard'
+import PostCard from './../../../../components/post/PostCard'
 import { Link } from 'react-router-dom';
 
 interface Props
@@ -54,18 +54,18 @@ export default function ActivitySection({ profileId }: Props)
                         <button className="tab">Comments</button>
                     </div>
                     {
-                        posts && posts.map((post) => (
-                            <Post key={post.id}
-                                name={post.profile.user.firstName + ' ' + post.profile.user.lastName}
-                                description={post.profile.summary}
-                                content={post.content} profileId={post.profile.id}
-                                title={post.title}
-                            />
+                        posts && posts.slice(-2).map((post) => (
+                            <PostCard key={post.id} post={post} />
                         ))
                     }
-                    <div className="show-all-posts">
-                        <a href="#">Show all posts →</a>
-                    </div>
+                    {
+                        posts.length > 2 && (
+                            <div className="show-all-posts">
+                                <a href="#">Show all posts →</a>
+                            </div>
+                        )
+                    }
+
 
                 </>
             )}

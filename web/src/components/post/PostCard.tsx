@@ -3,32 +3,29 @@ import InputOption from '../../pages/home/components/InputOption';
 import { InsertCommentOutlined, LoopOutlined, SendOutlined, ThumbUpAltOutlined } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import UserAvatar from '../user_avatar/UserAvatar';
+import { PostInfo } from '../../utils/post-info';
 
 interface Props
 {
-    name: string;
-    description: string;
-    content: string;
-    profileId: number;
-    title: string;
+    post: PostInfo;
 }
 
-export default function PostCard({ name, description, content, profileId, title }: Props)
+export default function PostCard({ post }: Props)
 {
     return (
         <div className='post'>
-            <Link to={`/profile/${profileId}`}>
+            <Link to={`/profile/${post.profile.id}`}>
                 <div className="post_header">
                     <UserAvatar />
                     <div className="post_info">
-                        <strong>{name}</strong>
-                        <p>{description}</p>
+                        <strong>{post.profile.user.firstName + ' ' + post.profile.user.lastName}</strong>
+                        <p>{post.profile.summary}</p>
                     </div>
                 </div>
             </Link>
             <div className="post_body">
-                <h3>{title}</h3>
-                <p>{content}</p>
+                <h3>{post.title}</h3>
+                <p>{post.content}</p>
             </div>
             <div className="post_buttons">
                 <InputOption Icon={ThumbUpAltOutlined} title='Like' color='gray' />

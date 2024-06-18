@@ -6,6 +6,9 @@ import './UserProfilePage.css';
 import ExperienceSection from './components/experience/ExperienceSection';
 import ActivitySection from './components/activity/ActivitySection';
 import { USER_AVATAR_URL } from '../../utils/user-avatar';
+import ConnectionSection from './components/connection/ConnectionSection';
+import SkillSection from './components/skill/SkillSection';
+import EducationSection from './components/education/EducationSection';
 
 const UserProfilePage: React.FC = () =>
 {
@@ -41,34 +44,12 @@ const UserProfilePage: React.FC = () =>
                             <h4 className='profile_summary'>{profile.summary}</h4>
                             <p>{profile.headline}</p>
                         </div>
-
                     </div>
                     <ActivitySection profileId={id} />
                     <ExperienceSection experiences={profile.experiences} />
-
-                    <div className="educations">
-                        <h2>Educations</h2>
-                        {profile.educations.map((education, index) => (
-                            <div key={index}>
-                                <h3>{education.school}</h3>
-                                <p>Degree: {education.degree}</p>
-                                <p>Field of Study: {education.filedOfStudy}</p>
-                                <p>Start Date: {new Date(education.startDate).toLocaleDateString()}</p>
-                                <p>End Date: {new Date(education.endDate).toLocaleDateString()}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="skills">
-                        <h2>Skills</h2>
-                        {profile.skills.map((skill, index) => (
-                            <div className="skill">
-                                <span className='skill_hash'>•</span>
-                                <p key={index}>{skill.name}</p>
-                            </div>
-
-                        ))}
-                    </div>
-
+                    <EducationSection educations={profile.educations} />
+                    <SkillSection skills={profile.skills} />
+                    <ConnectionSection />
                 </div>
 
             ) : (

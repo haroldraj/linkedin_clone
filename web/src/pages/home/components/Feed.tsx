@@ -54,17 +54,10 @@ export default function Feed()
                             <InputOption title='Write article' Icon={CalendarViewDay} color='#7FC15E' />
                         </div>
                     </div>
-
                     {
                         posts && posts.map((post) => (
-                            <Post key={post.id}
-                                name={post.profile.user.firstName + ' ' + post.profile.user.lastName}
-                                description={post.profile.summary}
-                                content={post.content} profileId={post.profile.id}
-                                title={post.title}
-                            />
+                            <Post key={post.id} post={post}/>
                         ))
-
                     }
                 </>
             )}
