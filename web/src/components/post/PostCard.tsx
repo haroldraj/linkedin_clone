@@ -4,13 +4,16 @@ import { InsertCommentOutlined, LoopOutlined, SendOutlined, ThumbUpAltOutlined }
 import { Link } from 'react-router-dom';
 import UserAvatar from '../user_avatar/UserAvatar';
 import { PostInfo } from '../../utils/post-info';
+import CommentSection from './CommentSection';
+import FormatDate from '../../utils/format-date';
 
 interface Props
 {
     post: PostInfo;
+    isPostPage?: boolean;
 }
 
-export default function PostCard({ post }: Props)
+export default function PostCard({ post, isPostPage = false }: Props)
 {
     return (
         <div className='post'>
@@ -20,23 +23,27 @@ export default function PostCard({ post }: Props)
                     <div className="post_info">
                         <strong>{post.profile.user.firstName + ' ' + post.profile.user.lastName}</strong>
                         <p>{post.profile.summary}</p>
+                        <p>{FormatDate(post.creationDate)}</p>
                     </div>
                 </div>
             </Link>
             <div className="post_body">
                 <h3>{post.title}</h3>
-                <p>{post.content}</p>
+                <p>
+                    {isPostPage ? post.content : post.content.length > 50 ? post.content.slice(0, 50) : post.content}
+                    {post.content.length > 50 && !isPostPage && <a href={`/post/${post.id}`} className="post_see-more">...see more</a>}
+
+                </p>
             </div>
             <div className="post_buttons">
                 <InputOption Icon={ThumbUpAltOutlined} title='Like' color='gray' />
-                <InputOption Icon={InsertCommentOutlined} title='Comment' color='gray' />
+                <a href={`/post/${post.id}`}>
+                    <InputOption Icon={InsertCommentOutlined} title='Comment' color='gray' />
+                </a>
                 <InputOption Icon={LoopOutlined} title='Repost' color='gray' />
                 <InputOption Icon={SendOutlined} title='Send' color='gray' />
             </div>
-            <div className="add-comment">
-                <UserAvatar />
-                <input type="text" placeholder="Add a comment..." />
-            </div>
+            <CommentSection postId={post.id} comments={post.comments} />
         </div>
     )
 }

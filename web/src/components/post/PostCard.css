@@ -36,7 +36,7 @@
     font-size: 15px;
 }
 
-.post_info > h2:hover {
+.post_info > strong:hover {
     color: #0a66c2 !important;
     text-decoration: underline;
 }
@@ -46,16 +46,13 @@
     justify-content: space-evenly
 }
 
-.add-comment {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.post_see-more {
+    margin-left: 10px;
+    color: gray;
 }
 
-.add-comment input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 20px;
-    margin-left: 10px;
+.post_see-more:hover {
+    color: #0077b7;
+    text-decoration: underline;
 }
+
