@@ -55,7 +55,7 @@ export default function ActivitySection({ profileId }: Props)
                     </div>
                     {
                         posts && posts.slice(-2).map((post) => (
-                            <PostCard key={post.id} post={post} />
+                            <PostCard key={post.id} post={post}  />
                         ))
                     }
                     {
@@ -65,8 +65,6 @@ export default function ActivitySection({ profileId }: Props)
                             </div>
                         )
                     }
-
-
                 </>
             )}
         </div>

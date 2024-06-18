@@ -12,11 +12,10 @@ export default function SkillSection({skills}: Props)
       <div className="skills">
           <h2>Skills</h2>
           {skills && skills.map((skill) => (
-              <div className="skill">
+              <div className="skill" key={skill.id}>
                   <span className='skill_hash'>•</span>
-                  <p key={skill.id}>{skill.name}</p>
+                  <p>{skill.name}</p>
               </div>
-
           ))}
       </div>
   )

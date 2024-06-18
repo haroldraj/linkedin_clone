@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
-import PostPage from "./pages/PostPage";
+import PostPage from "./pages/post/PostPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ProfilePage from "./pages/ProfilePage";
 import NotificationsPage from "./pages/NotificationsPage";

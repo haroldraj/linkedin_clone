@@ -45,7 +45,7 @@ const postAPI = {
     {
         try
         {
-            const response = await fetch(`${API_URL}/${id}`);
+            const response = await fetch(`${API_URL}/${id}/with-comments`);
             if (!response.ok)
             {
                 throw new Error(`Failed to fetch post with id ${id}`);
@@ -80,6 +80,29 @@ const postAPI = {
         {
             console.error('Error creating post:', error);
             throw error;  
+        }
+    },
+
+    addComment: async (postId:number , commentContent: string ) =>
+    {
+        try
+        {
+            const response = await fetch(`${API_URL}/${postId}/comments`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: commentContent, profileId: 96 })
+            });
+            if (!response.ok)
+            {
+                throw new Error('Failed to create post');
+            }
+            return await response.json();
+        } catch (error)
+        {
+            console.error('Error creating post:', error);
+            throw error;
         }
     },
 };
