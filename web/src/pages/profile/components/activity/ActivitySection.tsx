@@ -3,7 +3,7 @@ import { PostInfo } from '../../../../utils/post-info';
 import './ActivitySection.css'
 import postAPI from '../../../../api/postAPI';
 import { CircularProgress } from '@material-ui/core';
-import Post from '../../../../components/posts/PostCard'
+import Post from '../../../../components/post/PostCard'
 import { Link } from 'react-router-dom';
 
 interface Props

@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import './Feed.css';
 import InputOption from './InputOption';
 import { CalendarViewDay, Image, MessageSharp } from '@material-ui/icons';
-import Post from '../../../components/posts/PostCard';
+import Post from '../../../components/post/PostCard';
 import { PostInfo } from '../../../utils/post-info';
 import { Link } from 'react-router-dom';
 import postAPI from '../../../api/postAPI';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import UserAvatar from '../../../components/UserAvatar';
+import UserAvatar from '../../../components/user_avatar/UserAvatar';
 
 
 
@@ -42,11 +42,9 @@ export default function Feed()
                 <>
                     <div className="feed_inputContainer">
                         <div className='feed_topInput'>
-                                <UserAvatar />
-                            <Link to='/new-post'>
-                                <div className="feed_input" >
-                                    Write a new post
-                                </div>
+                            <UserAvatar />
+                            <Link to='/new-post' className="feed_input">
+                                Write a new post
                             </Link>
 
                         </div>
@@ -66,7 +64,7 @@ export default function Feed()
                                 title={post.title}
                             />
                         ))
-                            
+
                     }
                 </>
             )}

@@ -24,7 +24,6 @@
 .feed_input {
     border-radius: 30px;
     padding: 10px;
-    //max-width: 500px;
     width: 100%;
     color: gray;
     padding-left: 15px;
@@ -36,7 +35,7 @@
 }
 
 .feed_input:hover {
-   border: 0px;
+    border: 0px;
     border-radius: 30px;
     padding: 10px;
     color: black;

@@ -2,7 +2,7 @@ import './PostCard.css'
 import InputOption from '../../pages/home/components/InputOption';
 import { InsertCommentOutlined, LoopOutlined, SendOutlined, ThumbUpAltOutlined } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
-import UserAvatar from '../UserAvatar';
+import UserAvatar from '../user_avatar/UserAvatar';
 
 interface Props
 {
@@ -37,7 +37,7 @@ export default function PostCard({ name, description, content, profileId, title 
                 <InputOption Icon={SendOutlined} title='Send' color='gray' />
             </div>
             <div className="add-comment">
-                <UserAvatar/>
+                <UserAvatar />
                 <input type="text" placeholder="Add a comment..." />
             </div>
         </div>
