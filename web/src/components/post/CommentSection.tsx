@@ -41,17 +41,15 @@ export default function CommentSection({ postId, comments: initialComments }: Pr
     return (
         <>
             {comments && (
-                <div className="comment-section">
-                    <div className="add-comment">
-                        <UserAvatar />
-                        <input
-                            type="text"
-                            placeholder="Add a comment..."
-                            value={commentContent}
-                            onChange={handleChange}
-                            onKeyDown={handleKeyDown}
-                        />
-                    </div>
+                <div className="add-comment">
+                    <UserAvatar />
+                    <input
+                        type="text"
+                        placeholder="Add a comment..."
+                        value={commentContent}
+                        onChange={handleChange}
+                        onKeyDown={handleKeyDown}
+                    />
                 </div>
             )}
             {comments && [...comments].sort((a, b) =>

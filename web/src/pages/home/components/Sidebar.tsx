@@ -15,8 +15,8 @@ export default function Sidebar()
             <div className='sidebar_top'>
                 <img src="https://img.freepik.com/free-vector/abstract-digital-science-fiction-matrix-like-background_587448-971.jpg" alt="profile_banner" />
                 <UserAvatar />
-                <h2 className='sidebar_name'>Harold Rajaonarison</h2>
-                <h4 className='sidebar_email'>ReactJS | Flutter | Spring Boot</h4>
+                <h2 className='sidebar_name'>Jonathan Nelson</h2>
+                <h4 className='sidebar_email'>Firefighter</h4>
             </div>
             <div className='sidebar_stats'>
                 <div className='sidebar_stat'>
