@@ -20,7 +20,9 @@ export default function CommentCard({ comment }: Props)
             </div>
             <div className="comment_header">
                 <div className="comment_info">
-                    <a href={`/profile/${comment.profile.id}`}>{comment.profile.user.firstName + ' ' + comment.profile.user.lastName}</a>
+                    <Link to={`/profile/${comment.profile.id}`}>
+                        {comment.profile.user.firstName + ' ' + comment.profile.user.lastName}
+                    </Link>
                     <p>{comment.profile.summary}</p>
                     <p>{FormatDate(comment.creationDate)}</p>
                 </div>

@@ -31,15 +31,18 @@ export default function PostCard({ post, isPostPage = false }: Props)
                 <h3>{post.title}</h3>
                 <p>
                     {isPostPage ? post.content : post.content.length > 50 ? post.content.slice(0, 50) : post.content}
-                    {post.content.length > 50 && !isPostPage && <a href={`/post/${post.id}`} className="post_see-more">...see more</a>}
-
+                    {post.content.length > 50 &&
+                        !isPostPage &&
+                        <Link to={`/post/${post.id}`} className="post_see-more">
+                            ...see more
+                        </Link>}
                 </p>
             </div>
             <div className="post_buttons">
                 <InputOption Icon={ThumbUpAltOutlined} title='Like' color='gray' />
-                <a href={`/post/${post.id}`}>
+                <Link to={`/post/${post.id}`}>
                     <InputOption Icon={InsertCommentOutlined} title='Comment' color='gray' />
-                </a>
+                </Link>
                 <InputOption Icon={LoopOutlined} title='Repost' color='gray' />
                 <InputOption Icon={SendOutlined} title='Send' color='gray' />
             </div>
