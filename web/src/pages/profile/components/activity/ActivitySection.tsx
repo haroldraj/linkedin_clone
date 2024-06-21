@@ -55,16 +55,16 @@ export default function ActivitySection({ profileId }: Props)
                     </div>
                     {
                         posts && posts.slice(-2).map((post) => (
-                            <PostCard key={post.id} post={post}  />
+                            <PostCard key={post.id} post={post} />
                         ))
                     }
-                    {
+                    {/*
                         posts.length > 2 && (
                             <div className="show-all-posts">
-                                <a href="#">Show all posts →</a>
+                                <a href="">Show all posts →</a>
                             </div>
                         )
-                    }
+                    */}
                 </>
             )}
         </div>
